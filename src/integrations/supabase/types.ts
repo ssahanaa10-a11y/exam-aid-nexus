@@ -182,18 +182,21 @@ export type Database = {
           description: string | null
           id: string
           name: string
+          stream: Database["public"]["Enums"]["exam_stream"] | null
         }
         Insert: {
           created_at?: string
           description?: string | null
           id?: string
           name: string
+          stream?: Database["public"]["Enums"]["exam_stream"] | null
         }
         Update: {
           created_at?: string
           description?: string | null
           id?: string
           name?: string
+          stream?: Database["public"]["Enums"]["exam_stream"] | null
         }
         Relationships: []
       }
@@ -274,7 +277,15 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      exam_stream:
+        | "science"
+        | "arts"
+        | "commerce"
+        | "general"
+        | "engineering"
+        | "medical"
+        | "law"
+        | "management"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -401,6 +412,17 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      exam_stream: [
+        "science",
+        "arts",
+        "commerce",
+        "general",
+        "engineering",
+        "medical",
+        "law",
+        "management",
+      ],
+    },
   },
 } as const
