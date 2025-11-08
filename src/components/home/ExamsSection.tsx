@@ -119,7 +119,15 @@ export const ExamsSection = () => {
                     </Badge>
                   </div>
                   <CardTitle>{exam.name}</CardTitle>
-                  <CardDescription className="line-clamp-3">{exam.description}</CardDescription>
+                  {exam.description && (
+                    <CardDescription>
+                      <ul className="list-disc list-inside space-y-1 text-sm mt-2">
+                        {exam.description.split('.').filter(point => point.trim()).map((point, idx) => (
+                          <li key={idx}>{point.trim()}</li>
+                        ))}
+                      </ul>
+                    </CardDescription>
+                  )}
                 </CardHeader>
               </Card>
             </Link>

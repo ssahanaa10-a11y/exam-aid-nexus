@@ -29,9 +29,14 @@ export const Navbar = () => {
               </Button>
             </>
           ) : (
-            <Link to="/auth">
-              <Button variant="default" size="sm">Login</Button>
-            </Link>
+            <>
+              <Link to="/auth">
+                <Button variant="default" size="sm">Login</Button>
+              </Link>
+              <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90">
+                Get Started
+              </Button>
+            </>
           )}
         </div>
       </div>
