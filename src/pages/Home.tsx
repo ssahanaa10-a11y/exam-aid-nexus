@@ -18,9 +18,9 @@ const Home = () => {
         <div className="container">
           <div className="text-center mb-6">
             <blockquote className="text-lg md:text-xl font-serif italic text-foreground/90 max-w-3xl mx-auto">
-              "A room without books is like a body without a soul. Education is the kindling of a flame, not the filling of a vessel."
+              "Good books don't give up all their secrets at once"
             </blockquote>
-            <p className="mt-2 text-sm text-muted-foreground">— Socrates</p>
+            <p className="mt-2 text-sm text-muted-foreground">— Stephen King</p>
           </div>
           <div className="text-center text-sm text-muted-foreground border-t pt-6">
             <p>© 2025 BookFinder. Helping students find the best exam preparation books.</p>
