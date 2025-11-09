@@ -133,6 +133,7 @@ export type Database = {
           created_at: string
           description: string | null
           exam_id: string | null
+          grade_id: string | null
           id: string
           preface: string | null
           title: string
@@ -144,6 +145,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           exam_id?: string | null
+          grade_id?: string | null
           id?: string
           preface?: string | null
           title: string
@@ -155,6 +157,7 @@ export type Database = {
           created_at?: string
           description?: string | null
           exam_id?: string | null
+          grade_id?: string | null
           id?: string
           preface?: string | null
           title?: string
@@ -172,6 +175,13 @@ export type Database = {
             columns: ["exam_id"]
             isOneToOne: false
             referencedRelation: "exams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "books_grade_id_fkey"
+            columns: ["grade_id"]
+            isOneToOne: false
+            referencedRelation: "grades"
             referencedColumns: ["id"]
           },
         ]
@@ -199,6 +209,38 @@ export type Database = {
           stream?: Database["public"]["Enums"]["exam_stream"] | null
         }
         Relationships: []
+      }
+      grades: {
+        Row: {
+          board_id: string
+          created_at: string
+          display_name: string
+          grade_level: string
+          id: string
+        }
+        Insert: {
+          board_id: string
+          created_at?: string
+          display_name: string
+          grade_level: string
+          id?: string
+        }
+        Update: {
+          board_id?: string
+          created_at?: string
+          display_name?: string
+          grade_level?: string
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "grades_board_id_fkey"
+            columns: ["board_id"]
+            isOneToOne: false
+            referencedRelation: "boards"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profiles: {
         Row: {
